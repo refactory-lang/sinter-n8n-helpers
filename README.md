@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://github.com/refactory-lang"><img src="https://raw.githubusercontent.com/refactory-lang/.github/main/assets/refactory-logo.svg" alt="Refactory" width="300"></a>
+</p>
+
 # sinter-n8n-helpers
 
 TypeScript shadow library for n8n's `IExecuteFunctions` helper methods. Maps ~30-40 n8n runtime methods to Sinter runtime equivalents, enabling n8n node translation.
