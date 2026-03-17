@@ -126,3 +126,40 @@ Scenario 2: Normalizer rewrites helpers.request
 - **SC-004**: The normalizer can rewrite 100% of shadow calls in the three test nodes to Sinter-native equivalents.
 - **SC-005**: The library's `.d.ts` exports match n8n's `IExecuteFunctions` interface for all shadowed methods — verified by a type compatibility test.
 - **SC-006**: Methods intentionally not shadowed are documented in a compatibility matrix with migration guidance.
+
+---
+
+## v0.3 Addendum: Method Scope Clarification
+
+*Added 2026-03-16 to align with master spec v0.3 §9.4 Track B*
+
+### Method Count
+
+The v0.3 master spec references **15–20 critical methods** as the Phase 1 minimum for the 10-node validation gate. The full 30-40 method target is the Phase 2 scope. Priority:
+
+**Phase 1 Critical Methods (15–20)**:
+- `getNodeParameter`, `getInputData`, `getInputSourceData`
+- `helpers.request`, `helpers.requestWithAuthentication`, `helpers.httpRequest`
+- `getCredentials`, `getWorkflowStaticData`
+- `getExecutionId`, `getNode`, `getMode`
+- `helpers.returnJsonArray`, `helpers.constructExecutionMetaData`
+- `continueOnFail`, `getTimezone`
+
+**Phase 2 Extended Methods (remaining ~20)**:
+- Binary data: `helpers.prepareBinaryData`, `helpers.getBinaryDataBuffer`, `helpers.copyBinaryFile`
+- Pagination: `helpers.requestWithAuthenticationPaginated`
+- Complex: `helpers.requestOAuth1`, `helpers.requestOAuth2`, `helpers.httpRequestWithAuthentication`
+- Workflow: `getWorkflow`, `getRestApiUrl`, `getInstanceBaseUrl`
+
+### n8n Version Compatibility
+
+- Target: n8n v1.x `IExecuteFunctions` interface
+- Document breaking changes from n8n 0.x → 1.x in compatibility matrix
+- Pin to specific n8n-workflow package version in devDependencies
+
+### Credential Mapping
+
+Each n8n credential type maps to a Sinter secret scope:
+- `oAuth2Api` → Sinter OAuth2 credential provider
+- `httpHeaderAuth` → Sinter header-based secret
+- Custom credential types → Sinter generic secret store with key mapping
