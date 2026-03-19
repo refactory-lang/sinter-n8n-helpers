@@ -24,7 +24,7 @@ n8n nodes access runtime helpers via `this.getNodeParameter()`, `this.helpers.re
 
 ## Usage in Normalization
 
-The n8n helpers library is consumed during the Normalize-Det stage (idiomatic TS → constrained TS). The normalizer rewrites n8n method calls to sinter-n8n-helpers equivalents before Tier 1 translation to Rust.
+The n8n helpers library is consumed during the Normalize-Det stage (idiomatic TS → constrained TS). The normalizer rewrites n8n method calls to sinter-n8n-helpers equivalents before Stage 1 translation to Rust.
 
 ## License
 

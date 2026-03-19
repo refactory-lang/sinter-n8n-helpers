@@ -135,9 +135,9 @@ Scenario 2: Normalizer rewrites helpers.request
 
 ### Method Count
 
-The v0.3 master spec references **15–20 critical methods** as the Phase 1 minimum for the 10-node validation gate. The full 30-40 method target is the Phase 2 scope. Priority:
+The v0.3 master spec references **15–20 critical methods** as the Milestone 1 minimum for the 10-node validation gate. The full 30-40 method target is the Milestone 2 scope. Priority:
 
-**Phase 1 Critical Methods (15–20)**:
+**Milestone 1 Critical Methods (15–20)**:
 - `getNodeParameter`, `getInputData`, `getInputSourceData`
 - `helpers.request`, `helpers.requestWithAuthentication`, `helpers.httpRequest`
 - `getCredentials`, `getWorkflowStaticData`
@@ -145,7 +145,7 @@ The v0.3 master spec references **15–20 critical methods** as the Phase 1 mini
 - `helpers.returnJsonArray`, `helpers.constructExecutionMetaData`
 - `continueOnFail`, `getTimezone`
 
-**Phase 2 Extended Methods (remaining ~20)**:
+**Milestone 2 Extended Methods (remaining ~20)**:
 - Binary data: `helpers.prepareBinaryData`, `helpers.getBinaryDataBuffer`, `helpers.copyBinaryFile`
 - Pagination: `helpers.requestWithAuthenticationPaginated`
 - Complex: `helpers.requestOAuth1`, `helpers.requestOAuth2`, `helpers.httpRequestWithAuthentication`
