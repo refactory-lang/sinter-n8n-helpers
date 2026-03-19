@@ -22,9 +22,9 @@ n8n nodes access runtime helpers via `this.getNodeParameter()`, `this.helpers.re
 | `this.getInputData()` | `ctx.inputItems()` | Data flow |
 | `this.getWorkflowStaticData(type)` | `ctx.workflowState(type)` | State |
 
-## Usage in Tier 0 Normalization
+## Usage in Normalization
 
-The n8n helpers library is consumed during Tier 0 (idiomatic TS → constrained TS). The normalizer rewrites n8n method calls to sinter-n8n-helpers equivalents before Tier 1 translation to Rust.
+The n8n helpers library is consumed during the Normalize-Det stage (idiomatic TS → constrained TS). The normalizer rewrites n8n method calls to sinter-n8n-helpers equivalents before Tier 1 translation to Rust.
 
 ## License
 
